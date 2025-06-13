@@ -46,10 +46,8 @@ public class AppConfig {
 //		props.put(AvailableSettings.PHYSICAL_NAMING_STRATEGY, "org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl");
 //		props.put(AvailableSettings.PHYSICAL_NAMING_STRATEGY, "org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy");
 //		props.put(AvailableSettings.PHYSICAL_NAMING_STRATEGY, "org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy");
-//		props.put(AvailableSettings.PHYSICAL_NAMING_STRATEGY, new org.sav.plainspring.config.SnakeCasePhysicalNamingStrategy());
-//		props.put(AvailableSettings.IMPLICIT_NAMING_STRATEGY, "org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl");
-		props.put("hibernate.physical_naming_strategy", "org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy");
-		props.put("hibernate.implicit_naming_strategy", "org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl");
+		props.put(AvailableSettings.PHYSICAL_NAMING_STRATEGY, new org.sav.plainspring.config.SnakeCasePhysicalNamingStrategy());
+		props.put(AvailableSettings.IMPLICIT_NAMING_STRATEGY, "org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl");
 
 
 		factoryBean.setHibernateProperties(props);

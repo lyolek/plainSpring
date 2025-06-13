@@ -8,6 +8,10 @@ import org.hibernate.engine.jdbc.env.spi.JdbcEnvironment;
 @Slf4j
 public class SnakeCasePhysicalNamingStrategy implements PhysicalNamingStrategy {
 
+	public SnakeCasePhysicalNamingStrategy() {
+		log.info("--------------SnakeCasePhysicalNamingStrategy------------------------");
+	}
+
 	@Override
 	public Identifier toPhysicalCatalogName(Identifier name, JdbcEnvironment jdbcEnvironment) {
 		log.info("toPhysicalCatalogName name: {}", name);
