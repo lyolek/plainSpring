@@ -41,11 +41,15 @@ public class AppConfig {
 		Properties props = new Properties();
 		props.put(AvailableSettings.DIALECT, env.getProperty("hibernate.dialect"));
 		props.put(AvailableSettings.SHOW_SQL, env.getProperty("hibernate.show-sql"));
+		props.put(AvailableSettings.FORMAT_SQL, env.getProperty("hibernate.format-sql"));
 		props.put(AvailableSettings.HBM2DDL_AUTO, env.getProperty("hibernate.ddl-auto"));
 //		props.put(AvailableSettings.PHYSICAL_NAMING_STRATEGY, "org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl");
 //		props.put(AvailableSettings.PHYSICAL_NAMING_STRATEGY, "org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy");
 //		props.put(AvailableSettings.PHYSICAL_NAMING_STRATEGY, "org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy");
-		props.put(AvailableSettings.PHYSICAL_NAMING_STRATEGY, new org.sav.plainspring.config.SnakeCasePhysicalNamingStrategy());
+//		props.put(AvailableSettings.PHYSICAL_NAMING_STRATEGY, new org.sav.plainspring.config.SnakeCasePhysicalNamingStrategy());
+//		props.put(AvailableSettings.IMPLICIT_NAMING_STRATEGY, "org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl");
+		props.put("hibernate.physical_naming_strategy", "org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy");
+		props.put("hibernate.implicit_naming_strategy", "org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl");
 
 
 		factoryBean.setHibernateProperties(props);
